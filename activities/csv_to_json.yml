@@ -27,8 +27,8 @@ target:
   properties:
     format: "json"
     charset: "UTF-8"
-    path: "json_tgt"
+    path: "json_tgt_test"
     preserve_hierarchy: false
     format_properties:
-      merge_file: false
+      merge_file: true
     file_name: "data"
