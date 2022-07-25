@@ -25,4 +25,4 @@ target:
   properties:
     table: "data"
     auto_create_table: true
-  operation: "append"
+  operation: "overwrite"
