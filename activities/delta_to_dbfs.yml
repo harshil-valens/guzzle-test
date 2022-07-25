@@ -1,7 +1,28 @@
 version: 1
 job:
   type: "ingestion"
+source:
+  endpoint: "delta"
+  properties:
+    table: "data"
+    format_properties:
+      clean_column_name: false
 schema:
   schema_derivation_strategy: "source"
   strict_schema_check: true
   discard: true
+target:
+  endpoint: "dbfs_2"
+  properties:
+    format: "delimited"
+    charset: "UTF-8"
+    path: "data/csv_tgt/"
+    preserve_hierarchy: false
+    format_properties:
+      column_delimiter: ","
+      quote_delimiter: "\""
+      escape_char: "\\\\"
+      contains_header: true
+      merge_file: false
+      trim_white_space: "none"
+    file_name: "data"
