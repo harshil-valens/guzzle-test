@@ -31,3 +31,4 @@ target:
     preserve_hierarchy: false
     format_properties:
       merge_file: true
+    file_name: "data2"
