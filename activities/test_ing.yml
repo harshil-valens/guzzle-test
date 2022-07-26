@@ -25,4 +25,6 @@ target:
   properties:
     table: "data"
     auto_create_table: true
+    merge_schema: false
+    overwrite_schema: false
   operation: "overwrite"
