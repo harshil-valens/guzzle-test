@@ -1,34 +1,31 @@
 version: 1
 job:
-  type: "ingestion"
-  description: "Special desc"
+  type: ingestion
+  description: Special desc
 source:
-  endpoint: "lo_lfs"
+  endpoint: lo_lfs
   properties:
-    source_file_pattern: "csv/users*.csv"
-    format: "delimited"
-    charset: "UTF-8"
-    partial_load: false
+    format: delimited
     format_properties:
-      column_delimiter: ","
-      quote_delimiter: "\""
-      escape_char: "\\\\"
+      column_delimiter: ','
       contains_header: true
+      quote_delimiter: '"'
+      escape_char: \\
       infer_schema: false
-      clean_column_name: false
-      trim_white_space: "none"
+    source_file_pattern: csv/users*.csv
+    charset: UTF-8
+    partial_load: false
 schema:
-  schema_derivation_strategy: "source"
   strict_schema_check: true
-  discard: true
+  schema_derivation_strategy: schema
   columns: []
+  discard: true
 target:
-  endpoint: "lo_lfs"
+  endpoint: lo_lfs
   properties:
-    format: "json"
-    charset: "UTF-8"
-    path: "json_tgt"
-    preserve_hierarchy: false
+    format: json
+    charset: UTF-8
+    path: json_tgt
     format_properties:
       merge_file: true
-    file_name: "data5"
+    preserve_hierarchy: false
